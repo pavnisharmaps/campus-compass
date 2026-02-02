@@ -2,95 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SRM PLACEMENT INTELLIGENCE — Enterprise Design System */
+/* Dense, analytical, data-grade interface inspired by Bloomberg/McKinsey */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Core backgrounds */
+    --background: 222 47% 6%;
+    --foreground: 210 20% 95%;
+    
+    /* Cards and surfaces */
+    --card: 222 45% 8%;
+    --card-foreground: 210 20% 95%;
+    --card-elevated: 222 40% 11%;
+    
+    /* Popover surfaces */
+    --popover: 222 45% 10%;
+    --popover-foreground: 210 20% 95%;
+    
+    /* Primary brand - Deep navy blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+    
+    /* Secondary - Slate */
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 210 20% 85%;
+    
+    /* Muted elements */
+    --muted: 222 25% 14%;
+    --muted-foreground: 215 16% 55%;
+    
+    /* Accent - Enterprise teal */
+    --accent: 173 80% 40%;
+    --accent-foreground: 173 80% 95%;
+    
+    /* Semantic colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 152 69% 40%;
+    --success-foreground: 152 69% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 10%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 199 89% 95%;
+    
+    /* Border and input */
+    --border: 222 25% 20%;
+    --input: 222 30% 16%;
+    --ring: 217 91% 60%;
+    
+    /* Radius */
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Category colors */
+    --category-enterprise: 217 91% 60%;
+    --category-product: 280 70% 55%;
+    --category-service: 173 80% 40%;
+    --category-startup: 38 92% 50%;
+    
+    /* Signal colors */
+    --signal-high: 152 69% 40%;
+    --signal-medium: 38 92% 50%;
+    --signal-low: 0 72% 51%;
+    
+    /* Sidebar */
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 222 25% 15%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Chart colors */
+    --chart-1: 217 91% 60%;
+    --chart-2: 173 80% 40%;
+    --chart-3: 280 70% 55%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 152 69% 40%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-elevated: 210 20% 97%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 217 91% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 45%;
+    
+    --accent: 173 80% 35%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 214 32% 88%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 45%;
+    
+    --sidebar-background: 210 20% 97%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 20% 93%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 88%;
+    --sidebar-ring: 217 91% 45%;
   }
 }
 
@@ -98,8 +130,235 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  /* Custom scrollbar for enterprise feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer components {
+  /* Data display components */
+  .data-label {
+    @apply text-xs font-medium uppercase tracking-wider text-muted-foreground;
+  }
+  
+  .data-value {
+    @apply text-sm font-semibold text-foreground;
+  }
+  
+  .data-value-lg {
+    @apply text-2xl font-bold text-foreground tabular-nums;
+  }
+  
+  .data-value-mono {
+    @apply font-mono text-sm text-foreground tabular-nums;
+  }
+  
+  /* Section headers */
+  .section-header {
+    @apply flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4;
+  }
+  
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-border to-transparent;
+  }
+  
+  /* Card variants */
+  .intelligence-card {
+    @apply bg-card border border-border rounded-lg p-4 transition-all duration-200;
+  }
+  
+  .metric-card {
+    @apply bg-card border border-border rounded-lg p-4 text-center;
+  }
+  
+  .stat-card {
+    @apply bg-card border border-border rounded-xl p-6;
+  }
+  
+  /* Status badges */
+  .status-positive {
+    background-color: hsl(var(--success) / 0.15);
+    @apply text-success;
+    border: 1px solid hsl(var(--success) / 0.2);
+  }
+  
+  .status-warning {
+    background-color: hsl(var(--warning) / 0.15);
+    @apply text-warning;
+    border: 1px solid hsl(var(--warning) / 0.2);
+  }
+  
+  .status-negative {
+    background-color: hsl(var(--destructive) / 0.15);
+    @apply text-destructive;
+    border: 1px solid hsl(var(--destructive) / 0.2);
+  }
+  
+  .status-neutral {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+  
+  /* Category tags */
+  .category-enterprise {
+    background-color: hsl(var(--category-enterprise) / 0.15);
+    color: hsl(var(--category-enterprise));
+    border: 1px solid hsl(var(--category-enterprise) / 0.3);
+  }
+  
+  .category-product {
+    background-color: hsl(var(--category-product) / 0.15);
+    color: hsl(var(--category-product));
+    border: 1px solid hsl(var(--category-product) / 0.3);
+  }
+  
+  .category-service {
+    background-color: hsl(var(--category-service) / 0.15);
+    color: hsl(var(--category-service));
+    border: 1px solid hsl(var(--category-service) / 0.3);
+  }
+  
+  .category-startup {
+    background-color: hsl(var(--category-startup) / 0.15);
+    color: hsl(var(--category-startup));
+    border: 1px solid hsl(var(--category-startup) / 0.3);
+  }
+  
+  /* Signal indicators */
+  .signal-high {
+    @apply text-success;
+  }
+  
+  .signal-medium {
+    @apply text-warning;
+  }
+  
+  .signal-low {
+    @apply text-destructive;
+  }
+  
+  /* Interactive elements */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 text-sm font-medium text-muted-foreground rounded-lg transition-all duration-200 hover:bg-secondary hover:text-foreground;
+  }
+  
+  .nav-item-active {
+    @apply bg-primary/10 text-primary border-l-2 border-primary;
+  }
+  
+  /* Grid layouts for data */
+  .data-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .metric-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+  }
+  
+  /* Tab navigation */
+  .tab-nav {
+    @apply flex items-center gap-1 p-1 bg-muted/50 rounded-lg;
+  }
+  
+  .tab-item {
+    @apply px-4 py-2 text-sm font-medium text-muted-foreground rounded-md transition-all duration-200 hover:text-foreground;
+  }
+  
+  .tab-item-active {
+    @apply bg-card text-foreground shadow-sm;
+  }
+  
+  /* Search input */
+  .search-input {
+    @apply w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200;
+  }
+  
+  /* Glassmorphism effects */
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+  
+  .glass-elevated {
+    @apply bg-card-elevated/90 backdrop-blur-xl border border-border shadow-xl;
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary;
+  }
+  
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Subtle pulse for live data */
+  .pulse-subtle {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  /* Dot pattern background */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
